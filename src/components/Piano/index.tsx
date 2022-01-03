@@ -1,5 +1,5 @@
 import { Container } from "@inlet/react-pixi";
-import { isWhite } from "./lib/isWhite";
+import { isWhite } from "../lib/isWhite";
 import { PianoKey } from "./PianoKey";
 
 export const Piano = () => {

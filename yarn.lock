@@ -970,6 +970,11 @@ picomatch@^2.2.2:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
   integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
+pixi-viewport@^4.34.4:
+  version "4.34.4"
+  resolved "https://registry.yarnpkg.com/pixi-viewport/-/pixi-viewport-4.34.4.tgz#78d575235225d852e5017e89da7cc939ec50a9f8"
+  integrity sha512-JARPbHRxmbiedj2qc/kjwd0rKIplKoRcLIDjO9DAMtjXzAlVWAdkwLxvY7g2EJBCHqNqxrEQy9ssye1DM4XRKg==
+
 pixi.js@^6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/pixi.js/-/pixi.js-6.2.1.tgz#97361731cf20dfa9a403fae8f26f8a69c8a4dcd0"
