@@ -1,5 +1,6 @@
 import { Container } from "@inlet/react-pixi";
 import { isWhite } from "../lib/isWhite";
+import { numLowerWhites } from "../lib/numLowerWhites";
 import { PianoKey } from "./PianoKey";
 
 export const Piano = () => {
@@ -14,9 +15,6 @@ export const Piano = () => {
     53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35,
     34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21,
   ];
-
-  const numLowerWhites = (range: number[]) =>
-    range.reduce((acc, val) => (isWhite(val) ? acc + 1 : acc), 0);
 
   return (
     <Container sortableChildren>
