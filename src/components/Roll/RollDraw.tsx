@@ -1,6 +1,6 @@
 import { Graphics } from "@inlet/react-pixi";
 import { ComponentProps, useCallback } from "react";
-import { Range } from "@tonaljs/tonal";
+import { Note, Range } from "@tonaljs/tonal";
 import { isWhite } from "../lib/isWhite";
 
 type Props = {
@@ -60,6 +60,19 @@ export const RollDraw = ({ barNumber }: Props) => {
         g.lineStyle(1, 0x333333);
         g.moveTo(20 * (index + 1), 0);
         g.lineTo(20 * (index + 1), 818.6666666666667);
+      }
+    });
+
+    keys7_0.map((noteNumber, index) => {
+      const note = Note.get(Note.fromMidi(noteNumber));
+      if (note.letter === "B" && note.acc === "") {
+        g.lineStyle(1, 0x111111);
+        g.moveTo(0, 16 + index * ((16 * 7) / 12));
+        g.lineTo(320 * barNumber, 16 + index * ((16 * 7) / 12));
+      } else if (note.letter === "E" && note.acc === "") {
+        g.lineStyle(1, 0x1f2123);
+        g.moveTo(0, 16 + index * ((16 * 7) / 12));
+        g.lineTo(320 * barNumber, 16 + index * ((16 * 7) / 12));
       }
     });
   }, []);
