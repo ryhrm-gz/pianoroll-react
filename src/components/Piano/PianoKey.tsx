@@ -8,7 +8,7 @@ type Props = {
   y: number;
   width: number;
   height: number;
-  noteNumber: any;
+  noteNumber: number;
 };
 
 export const PianoKey = ({ color, y, width, height, noteNumber }: Props) => {

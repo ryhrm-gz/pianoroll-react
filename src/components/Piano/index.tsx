@@ -6,7 +6,7 @@ import { PianoKey } from "./PianoKey";
 export const Piano = () => {
   const whiteWidth = 80;
   const whiteHeight = 16;
-  const blackWidth = whiteWidth * 0.7;
+  const blackWidth = whiteWidth * 0.6;
   const blackHeight = whiteHeight * 0.6;
   const keys = [
     108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 98, 97, 96, 95, 94, 93, 92,
