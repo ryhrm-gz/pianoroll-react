@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { TestWrapper } from "./TestWrapper";
+import { PianoRoll } from "./PianoRoll";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TestWrapper />
+    <PianoRoll barNumber={4} />
   </React.StrictMode>,
   document.getElementById("root")
 );
