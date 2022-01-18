@@ -1,6 +1,6 @@
 import { Container } from "@inlet/react-pixi";
-import { isWhite } from "../lib/isWhite";
-import { RollBlock } from "./RollBlock";
+
+import { RollBar } from "./RollBar";
 
 export const Roll = () => {
   const keys = [
@@ -10,29 +10,15 @@ export const Roll = () => {
     53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35,
     34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21,
   ];
+
+  const barNumber = 4;
+  const barWidth = 320;
+
   return (
-    <Container>
-      {keys.map((noteNumber, index) => {
-        if (isWhite(index)) {
-          return (
-            <RollBlock
-              key={noteNumber}
-              color="white"
-              y={((16 * 7) / 12) * index}
-              noteNumber={noteNumber}
-            />
-          );
-        } else {
-          return (
-            <RollBlock
-              key={noteNumber}
-              color="black"
-              y={((16 * 7) / 12) * index}
-              noteNumber={noteNumber}
-            />
-          );
-        }
-      })}
+    <Container sortableChildren>
+      {[...Array(barNumber)].map((_, index) => (
+        <RollBar key={`bar_${index + 1}`} bar={index} width={barWidth} />
+      ))}
     </Container>
   );
 };

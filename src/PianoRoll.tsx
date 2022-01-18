@@ -20,7 +20,7 @@ export const PianoRoll = () => {
         >
           <Piano />
         </Stage>
-        <Stage height={833} width={500}>
+        <Stage height={833} width={1300}>
           <Roll />
         </Stage>
       </div>
