@@ -1,4 +1,4 @@
-import { Container, Graphics } from "@inlet/react-pixi";
+import { Graphics } from "@inlet/react-pixi";
 import { Note } from "@tonaljs/tonal";
 import { InteractionEvent } from "pixi.js";
 import { ComponentProps, useCallback, useMemo, useState } from "react";

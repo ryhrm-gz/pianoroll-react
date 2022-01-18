@@ -1,4 +1,3 @@
-import { Container } from "@inlet/react-pixi";
 import { RollColumn } from "./RollColumn";
 
 type Props = {

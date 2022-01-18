@@ -1,4 +1,3 @@
-import { Container } from "@inlet/react-pixi";
 import { Note, Range } from "@tonaljs/tonal";
 import { isWhite } from "../lib/isWhite";
 import { RollBlock } from "./RollBlock";
