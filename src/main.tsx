@@ -4,7 +4,7 @@ import { PianoRoll } from "./PianoRoll";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PianoRoll barNumber={4} />
+    <PianoRoll barNumber={32} />
   </React.StrictMode>,
   document.getElementById("root")
 );

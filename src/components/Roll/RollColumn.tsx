@@ -16,7 +16,7 @@ export const RollColumn = ({ width, bar, quarter, sixteenth }: Props) => {
   const keys0 = [23, 22];
   const keyBottom = 21;
   return (
-    <Container>
+    <>
       <RollBlock
         color="white"
         x={width * sixteenth}
@@ -124,6 +124,6 @@ export const RollColumn = ({ width, bar, quarter, sixteenth }: Props) => {
           note: Note.get(Note.fromMidi(keyBottom)).name,
         }}
       />
-    </Container>
+    </>
   );
 };

@@ -10,13 +10,11 @@ type Props = {
 
 export const RollSixteenth = ({ width, bar, quarter, sixteenth }: Props) => {
   return (
-    <Container>
-      <RollColumn
-        bar={bar}
-        quarter={quarter}
-        sixteenth={sixteenth}
-        width={width}
-      />
-    </Container>
+    <RollColumn
+      bar={bar}
+      quarter={quarter}
+      sixteenth={sixteenth}
+      width={width}
+    />
   );
 };

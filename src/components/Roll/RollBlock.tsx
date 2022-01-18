@@ -87,14 +87,12 @@ export const RollBlock = ({
   };
 
   return (
-    <Container sortableChildren zIndex={100}>
-      <Graphics
-        draw={draw}
-        pointerdown={(event) => handleNoteDragStart(event)}
-        pointerup={(event) => handleNoteDragEnd(event)}
-        pointerupoutside={handleNoteDragEndOutSide}
-        pointermove={(event) => handleDragMove(event)}
-      />
-    </Container>
+    <Graphics
+      draw={draw}
+      pointerdown={(event) => handleNoteDragStart(event)}
+      pointerup={(event) => handleNoteDragEnd(event)}
+      pointerupoutside={handleNoteDragEndOutSide}
+      pointermove={(event) => handleDragMove(event)}
+    />
   );
 };
