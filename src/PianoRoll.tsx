@@ -1,18 +1,29 @@
-import { useRef } from "react";
-import { Viewport as PixiViewport } from "pixi-viewport";
 import { Stage } from "@inlet/react-pixi";
 import { Piano } from "./components/Piano";
-import { Scrollbox } from "./components/Box";
+import { Roll } from "./components/Roll";
 
 export const PianoRoll = () => {
-  const viewportRef = useRef<PixiViewport>(null);
   return (
     <div>
-      <Stage>
-        <Scrollbox boxWidth={200} boxHeight={200}>
+      <div
+        style={{
+          height: 500,
+          width: 900,
+          overflow: "auto",
+          display: "flex",
+        }}
+      >
+        <Stage
+          height={833}
+          width={80}
+          style={{ position: "sticky", top: 0, left: 0 }}
+        >
           <Piano />
-        </Scrollbox>
-      </Stage>
+        </Stage>
+        <Stage height={833} width={500}>
+          <Roll />
+        </Stage>
+      </div>
     </div>
   );
 };

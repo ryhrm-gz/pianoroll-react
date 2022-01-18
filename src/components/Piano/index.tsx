@@ -22,7 +22,7 @@ export const Piano = () => {
         if (isWhite(index)) {
           return (
             <PianoKey
-              key={index}
+              key={noteNumber}
               color="white"
               width={whiteWidth}
               height={whiteHeight}
@@ -30,12 +30,13 @@ export const Piano = () => {
                 whiteHeight *
                 numLowerWhites(Array.from(Array(index), (v, k) => k))
               }
+              noteNumber={noteNumber}
             />
           );
         } else {
           return (
             <PianoKey
-              key={index}
+              key={noteNumber}
               color="black"
               width={blackWidth}
               height={blackHeight}
@@ -44,6 +45,7 @@ export const Piano = () => {
                   numLowerWhites(Array.from(Array(index), (v, k) => k)) +
                 -blackHeight / 2
               }
+              noteNumber={noteNumber}
             />
           );
         }
