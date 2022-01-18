@@ -10,10 +10,10 @@ export const Roll = ({ barNumber }: Props) => {
   const barWidth = 320;
 
   return (
-    <Container>
+    <>
       {[...Array(barNumber)].map((_, index) => (
         <RollBar key={`bar_${index + 1}`} bar={index} width={barWidth} />
       ))}
-    </Container>
+    </>
   );
 };
