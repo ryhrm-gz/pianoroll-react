@@ -19,11 +19,13 @@ export const PianoRoll = ({ barNumber, width = 800, height = 833 }: Props) => {
   const handleWheel = (event: WheelEvent) => {
     const x = Math.floor(event.deltaX);
     const y = Math.floor(event.deltaY);
-    if (deltaX !== x) {
+    if (x !== 0) {
+      setDeltaY(0);
       setDeltaX(x);
     }
 
-    if (deltaY !== y) {
+    if (y !== 0) {
+      setDeltaX(0);
       setDeltaY(y);
     }
   };

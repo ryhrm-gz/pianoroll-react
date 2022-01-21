@@ -9,6 +9,6 @@ export const scrollY = (
   } else if (deltaY < 0) {
     return current - speed > 0 ? current - speed : 0;
   } else {
-    return 0;
+    return current;
   }
 };

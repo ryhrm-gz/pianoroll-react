@@ -43,11 +43,11 @@ export const DrawRoll = ({ barNumber }: Props) => {
       if (note.letter === "B" && note.acc === "") {
         g.lineStyle(1, 0x111111)
           .moveTo(0 + 80, 16 + index * ((16 * 7) / 12))
-          .lineTo(320 * barNumber, 16 + index * ((16 * 7) / 12));
+          .lineTo(320 * barNumber + 80, 16 + index * ((16 * 7) / 12));
       } else if (note.letter === "E" && note.acc === "") {
         g.lineStyle(1, 0x1f2123)
           .moveTo(0 + 80, 16 + index * ((16 * 7) / 12))
-          .lineTo(320 * barNumber, 16 + index * ((16 * 7) / 12));
+          .lineTo(320 * barNumber + 80, 16 + index * ((16 * 7) / 12));
       }
     });
 
