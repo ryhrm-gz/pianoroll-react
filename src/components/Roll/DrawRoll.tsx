@@ -1,15 +1,15 @@
 import { Graphics } from "@inlet/react-pixi";
 import { ComponentProps, useCallback } from "react";
 import { Note, Range } from "@tonaljs/tonal";
-import { isWhite } from "../lib/isWhite";
+import { isWhite } from "../utils/isWhite";
 
 type Props = {
-  barNumber: number;
+  numberBar: number;
 };
 
 type Draw = ComponentProps<typeof Graphics>["draw"];
 
-export const DrawRoll = ({ barNumber }: Props) => {
+export const DrawRoll = ({ numberBar }: Props) => {
   const keysMid = Range.numeric(["B7", "Bb0"]);
 
   //@ts-ignore
@@ -17,14 +17,14 @@ export const DrawRoll = ({ barNumber }: Props) => {
     g.clear();
 
     // draw top key
-    g.beginFill(0x25282b).drawRect(0 + 80, 0, 320 * barNumber, 16);
+    g.beginFill(0x25282b).drawRect(0 + 80, 0, 320 * numberBar, 16);
 
-    // draw keys7_1
+    // draw keysMid
     keysMid.map((_, index) => {
       g.beginFill(isWhite(index + 1) ? 0x25282b : 0x1f2123).drawRect(
         0 + 80,
         16 + index * ((16 * 7) / 12),
-        320 * barNumber,
+        320 * numberBar,
         (16 * 7) / 12
       );
     });
@@ -33,7 +33,7 @@ export const DrawRoll = ({ barNumber }: Props) => {
     g.beginFill(0x25282b).drawRect(
       0 + 80,
       809.3333333333334 + (16 * 7) / 12,
-      320 * barNumber,
+      320 * numberBar,
       14
     );
 
@@ -43,16 +43,16 @@ export const DrawRoll = ({ barNumber }: Props) => {
       if (note.letter === "B" && note.acc === "") {
         g.lineStyle(1, 0x111111)
           .moveTo(0 + 80, 16 + index * ((16 * 7) / 12))
-          .lineTo(320 * barNumber + 80, 16 + index * ((16 * 7) / 12));
+          .lineTo(320 * numberBar + 80, 16 + index * ((16 * 7) / 12));
       } else if (note.letter === "E" && note.acc === "") {
         g.lineStyle(1, 0x1f2123)
           .moveTo(0 + 80, 16 + index * ((16 * 7) / 12))
-          .lineTo(320 * barNumber + 80, 16 + index * ((16 * 7) / 12));
+          .lineTo(320 * numberBar + 80, 16 + index * ((16 * 7) / 12));
       }
     });
 
     // draw vertical line
-    [...Array((320 * barNumber) / 20)].map((_, index) => {
+    [...Array((320 * numberBar) / 20)].map((_, index) => {
       if ((index + 1) % 16 === 0) {
         g.lineStyle(1, 0x777777);
       } else if ((index + 1) % 4 === 0) {

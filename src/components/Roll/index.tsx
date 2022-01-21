@@ -1,9 +1,9 @@
 import { DrawRoll } from "./DrawRoll";
 
 type Props = {
-  barNumber: number;
+  numberBar: number;
 };
 
-export const Roll = ({ barNumber }: Props) => {
-  return <DrawRoll barNumber={barNumber} />;
+export const Roll = ({ numberBar }: Props) => {
+  return <DrawRoll numberBar={numberBar} />;
 };

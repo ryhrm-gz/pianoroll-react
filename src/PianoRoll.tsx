@@ -6,12 +6,12 @@ import { Roll } from "./components/Roll";
 import { RollViewport, KeysViewport } from "./components/Viewport";
 
 type Props = {
-  barNumber: number;
+  numberBar: number;
   width?: number;
   height?: number;
 };
 
-export const PianoRoll = ({ barNumber, width = 800, height = 833 }: Props) => {
+export const PianoRoll = ({ numberBar, width = 800, height = 833 }: Props) => {
   const viewportRef = useRef<PixiViewport>(null);
   const [deltaX, setDeltaX] = useState(0);
   const [deltaY, setDeltaY] = useState(0);
@@ -38,9 +38,9 @@ export const PianoRoll = ({ barNumber, width = 800, height = 833 }: Props) => {
     >
       <RollViewport
         ref={viewportRef}
-        {...{ width: width - 80, height, barNumber, deltaX, deltaY }}
+        {...{ width: width - 80, height, numberBar, deltaX, deltaY }}
       >
-        <Roll barNumber={barNumber} />
+        <Roll numberBar={numberBar} />
       </RollViewport>
       <KeysViewport ref={viewportRef} {...{ height, deltaY }}>
         <Keys />

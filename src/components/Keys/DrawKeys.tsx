@@ -1,8 +1,8 @@
 import { ComponentProps, useCallback } from "react";
-import { Graphics, Container, Text } from "@inlet/react-pixi";
+import { Graphics, Text } from "@inlet/react-pixi";
 import { Note, Range } from "@tonaljs/tonal";
-import { isWhite } from "../lib/isWhite";
-import { numLowerWhites } from "../lib/numLowerWhites";
+import { isWhite } from "../utils/isWhite";
+import { numLowerWhites } from "../utils/numLowerWhites";
 import { TextStyle } from "pixi.js";
 
 type Draw = ComponentProps<typeof Graphics>["draw"];
@@ -25,7 +25,7 @@ export const DrawKeys = () => {
           .lineStyle(1, 0xcccccc)
           .drawRect(
             0,
-            whiteHeight * numLowerWhites(Array.from(Array(index), (v, k) => k)),
+            whiteHeight * numLowerWhites(Array.from(Array(index), (_, k) => k)),
             whiteWidth,
             whiteHeight
           );
@@ -40,7 +40,7 @@ export const DrawKeys = () => {
           .drawRect(
             0,
             whiteHeight *
-              numLowerWhites(Array.from(Array(index), (v, k) => k)) +
+              numLowerWhites(Array.from(Array(index), (_, k) => k)) +
               -blackHeight / 2,
             blackWidth,
             blackHeight
@@ -61,7 +61,7 @@ export const DrawKeys = () => {
               text={note.name}
               y={
                 whiteHeight *
-                  numLowerWhites(Array.from(Array(index), (v, k) => k)) +
+                  numLowerWhites(Array.from(Array(index), (_, k) => k)) +
                 3
               }
               x={62}

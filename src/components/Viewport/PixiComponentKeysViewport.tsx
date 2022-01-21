@@ -1,7 +1,7 @@
 import { PixiComponent } from "@inlet/react-pixi";
 import { Viewport as PixiViewport } from "pixi-viewport";
 import * as PIXI from "pixi.js";
-import { scrollY } from "./lib/scrollY";
+import { scrollY } from "./utils/scrollY";
 
 export interface ViewportProps {
   height: number;

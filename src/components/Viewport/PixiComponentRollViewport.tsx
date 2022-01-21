@@ -1,15 +1,15 @@
 import { PixiComponent } from "@inlet/react-pixi";
 import { Viewport as PixiViewport } from "pixi-viewport";
 import * as PIXI from "pixi.js";
-import { scrollX } from "./lib/scrollX";
-import { scrollY } from "./lib/scrollY";
+import { scrollX } from "./utils/scrollX";
+import { scrollY } from "./utils/scrollY";
 
 export interface ViewportProps {
   width: number;
   height: number;
   deltaX: number;
   deltaY: number;
-  barNumber: number;
+  numberBar: number;
   children?: React.ReactNode;
 }
 
@@ -18,11 +18,11 @@ interface PixiComponentViewportProps extends ViewportProps {
 }
 
 export const PixiComponentRollViewport = PixiComponent("RollViewport", {
-  create: ({ width, height, barNumber, app }: PixiComponentViewportProps) => {
+  create: ({ width, height, numberBar, app }: PixiComponentViewportProps) => {
     const viewport = new PixiViewport({
       screenWidth: width,
       screenHeight: height,
-      worldWidth: 320 * barNumber,
+      worldWidth: 320 * numberBar,
       worldHeight: 833,
       ticker: app.ticker,
       interaction: app.renderer.plugins.interaction,
