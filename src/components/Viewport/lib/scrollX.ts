@@ -3,7 +3,6 @@ export const scrollX = (
   speed: number,
   current: number
 ): number => {
-  console.log(deltaX);
   if (deltaX > 0) {
     return current + speed;
   } else if (deltaX < 0) {
