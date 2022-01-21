@@ -1,4 +1,4 @@
-import { Container } from "@inlet/react-pixi";
+import { Stage } from "@inlet/react-pixi";
 import { DrawRoll } from "./DrawRoll";
 
 type Props = {
@@ -7,8 +7,8 @@ type Props = {
 
 export const Roll = ({ barNumber }: Props) => {
   return (
-    <Container>
+    <Stage height={833} width={320 * barNumber}>
       <DrawRoll barNumber={barNumber} />
-    </Container>
+    </Stage>
   );
 };

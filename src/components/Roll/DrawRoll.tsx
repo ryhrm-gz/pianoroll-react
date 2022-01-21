@@ -60,7 +60,7 @@ export const DrawRoll = ({ barNumber }: Props) => {
       } else {
         g.lineStyle(1, 0x333333);
       }
-      g.moveTo(20 * (index + 1), 0).lineTo(20 * (index + 1), 818.6666666666667);
+      g.moveTo(20 * (index + 1), 0).lineTo(20 * (index + 1), 833);
     });
   }, []);
   return <Graphics draw={draw} />;

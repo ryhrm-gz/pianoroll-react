@@ -17,9 +17,7 @@ export const PianoRoll = ({ barNumber }: Props) => {
       }}
     >
       <Keys />
-      <Stage height={833} width={320 * barNumber}>
-        <Roll barNumber={barNumber} />
-      </Stage>
+      <Roll barNumber={barNumber} />
     </div>
   );
 };
