@@ -1,5 +1,5 @@
 import { Stage } from "@inlet/react-pixi";
-import { Piano } from "./components/Piano";
+import { Keys } from "./components/Keys";
 import { Roll } from "./components/Roll";
 
 type Props = {
@@ -16,13 +16,7 @@ export const PianoRoll = ({ barNumber }: Props) => {
         display: "flex",
       }}
     >
-      <Stage
-        height={833}
-        width={80}
-        style={{ position: "sticky", top: 0, left: 0 }}
-      >
-        <Piano />
-      </Stage>
+      <Keys />
       <Stage height={833} width={320 * barNumber}>
         <Roll barNumber={barNumber} />
       </Stage>
