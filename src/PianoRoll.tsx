@@ -3,7 +3,7 @@ import { useState, WheelEvent, useRef } from "react";
 import { Viewport as PixiViewport } from "pixi-viewport";
 import { Keys } from "./components/Keys";
 import { Roll } from "./components/Roll";
-import { Viewport } from "./components/Viewport";
+import { RollViewport, KeysViewport } from "./components/Viewport";
 
 type Props = {
   barNumber: number;
@@ -34,13 +34,15 @@ export const PianoRoll = ({ barNumber, width = 800, height = 833 }: Props) => {
       height={height}
       onWheel={(event) => handleWheel(event)}
     >
-      <Viewport
+      <RollViewport
         ref={viewportRef}
-        {...{ width, height, barNumber, deltaX, deltaY }}
+        {...{ width: width - 80, height, barNumber, deltaX, deltaY }}
       >
         <Roll barNumber={barNumber} />
-      </Viewport>
-      <Keys />
+      </RollViewport>
+      <KeysViewport ref={viewportRef} {...{ height, deltaY }}>
+        <Keys />
+      </KeysViewport>
     </Stage>
   );
 };
