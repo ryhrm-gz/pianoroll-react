@@ -57,6 +57,7 @@ export const DrawKeys = () => {
         if (note.letter === "C") {
           return (
             <Text
+              key={note.name}
               text={note.name}
               y={
                 whiteHeight *
