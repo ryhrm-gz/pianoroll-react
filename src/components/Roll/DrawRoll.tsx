@@ -9,7 +9,7 @@ type Props = {
 
 type Draw = ComponentProps<typeof Graphics>["draw"];
 
-export const RollDraw = ({ barNumber }: Props) => {
+export const DrawRoll = ({ barNumber }: Props) => {
   const keysMid = Range.numeric(["B7", "Bb0"]);
 
   //@ts-ignore
