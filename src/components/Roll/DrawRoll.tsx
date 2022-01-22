@@ -17,13 +17,12 @@ export const DrawRoll = ({ numberBar }: Props) => {
     g.clear();
 
     // draw top key
-    g.beginFill(0x25282b).drawRect(0 + 80, 0, 320 * numberBar, 16);
-
+    g.beginFill(0x25282b).drawRect(0 + 80, 25, 320 * numberBar, 16);
     // draw keysMid
     keysMid.map((_, index) => {
       g.beginFill(isWhite(index + 1) ? 0x25282b : 0x1f2123).drawRect(
         0 + 80,
-        16 + index * ((16 * 7) / 12),
+        16 + index * ((16 * 7) / 12) + 25,
         320 * numberBar,
         (16 * 7) / 12
       );
@@ -32,7 +31,7 @@ export const DrawRoll = ({ numberBar }: Props) => {
     // draw bottom key
     g.beginFill(0x25282b).drawRect(
       0 + 80,
-      809.3333333333334 + (16 * 7) / 12,
+      809.3333333333334 + (16 * 7) / 12 + 25,
       320 * numberBar,
       14
     );
@@ -42,12 +41,12 @@ export const DrawRoll = ({ numberBar }: Props) => {
       const note = Note.get(Note.fromMidi(noteNumber));
       if (note.letter === "B" && note.acc === "") {
         g.lineStyle(1, 0x111111)
-          .moveTo(0 + 80, 16 + index * ((16 * 7) / 12))
-          .lineTo(320 * numberBar + 80, 16 + index * ((16 * 7) / 12));
+          .moveTo(0 + 80, 16 + index * ((16 * 7) / 12) + 25)
+          .lineTo(320 * numberBar + 80, 16 + index * ((16 * 7) / 12) + 25);
       } else if (note.letter === "E" && note.acc === "") {
         g.lineStyle(1, 0x1f2123)
-          .moveTo(0 + 80, 16 + index * ((16 * 7) / 12))
-          .lineTo(320 * numberBar + 80, 16 + index * ((16 * 7) / 12));
+          .moveTo(0 + 80, 16 + index * ((16 * 7) / 12) + 25)
+          .lineTo(320 * numberBar + 80, 16 + index * ((16 * 7) / 12) + 25);
       }
     });
 
@@ -60,8 +59,13 @@ export const DrawRoll = ({ numberBar }: Props) => {
       } else {
         g.lineStyle(1, 0x333333);
       }
-      g.moveTo(20 * (index + 1) + 80, 0).lineTo(20 * (index + 1) + 80, 833);
+      g.moveTo(20 * (index + 1) + 80, 25).lineTo(
+        20 * (index + 1) + 80,
+        833 + 25
+      );
     });
+
+    g.endFill();
   }, []);
   return <Graphics draw={draw} />;
 };

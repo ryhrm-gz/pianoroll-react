@@ -5,7 +5,7 @@ export const scrollY = (
   bottom: number
 ): number => {
   if (deltaY > 0) {
-    return bottom < 833 ? current + speed : current;
+    return bottom < 833 + 25 ? current + speed : current;
   } else if (deltaY < 0) {
     return current - speed > 0 ? current - speed : 0;
   } else {

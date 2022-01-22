@@ -25,7 +25,9 @@ export const DrawKeys = () => {
           .lineStyle(1, 0xcccccc)
           .drawRect(
             0,
-            whiteHeight * numLowerWhites(Array.from(Array(index), (_, k) => k)),
+            whiteHeight *
+              numLowerWhites(Array.from(Array(index), (_, k) => k)) +
+              25,
             whiteWidth,
             whiteHeight
           );
@@ -41,7 +43,8 @@ export const DrawKeys = () => {
             0,
             whiteHeight *
               numLowerWhites(Array.from(Array(index), (_, k) => k)) +
-              -blackHeight / 2,
+              -blackHeight / 2 +
+              25,
             blackWidth,
             blackHeight
           );
@@ -62,12 +65,13 @@ export const DrawKeys = () => {
               y={
                 whiteHeight *
                   numLowerWhites(Array.from(Array(index), (_, k) => k)) +
-                3
+                28
               }
               x={62}
               style={
                 new TextStyle({ fontSize: 9, letterSpacing: 2, fill: "#555" })
               }
+              isSprite
             />
           );
         }
