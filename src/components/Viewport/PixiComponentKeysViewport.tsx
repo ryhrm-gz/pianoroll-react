@@ -1,4 +1,5 @@
 import { PixiComponent } from "@inlet/react-pixi";
+import { Simple } from "pixi-cull";
 import { Viewport as PixiViewport } from "pixi-viewport";
 import * as PIXI from "pixi.js";
 import { scrollY } from "./utils/scrollY";
@@ -22,6 +23,23 @@ export const PixiComponentKeysViewport = PixiComponent("KeysViewport", {
       worldHeight: 833,
       ticker: app.ticker,
       interaction: app.renderer.plugins.interaction,
+    });
+
+    const cull = new Simple();
+    cull.addList(
+      (viewport.children as PIXI.Container[])
+        .map((layer) => {
+          return layer.children;
+        })
+        .flat()
+    );
+    cull.cull(viewport.getVisibleBounds());
+
+    viewport.on("moved-end", () => {
+      if (viewport.dirty) {
+        cull.cull(viewport.getVisibleBounds());
+        viewport.dirty = false;
+      }
     });
 
     return viewport;

@@ -84,6 +84,7 @@ export const DrawRuler = ({ numberBar }: Props) => {
                   fontSize: 10,
                 })
               }
+              isSprite
             />
           );
         }

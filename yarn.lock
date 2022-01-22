@@ -975,6 +975,11 @@ picomatch@^2.2.2:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
   integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
+pixi-cull@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/pixi-cull/-/pixi-cull-2.1.0.tgz#476d88837cfca49c890fcbb6339a6e172cd77a6e"
+  integrity sha512-7NXXGhq1vq+rQts8qoZ+oWpqHu2Y19Fldk3Xl5EvVtbykrVbTUL4wp/Ndd4b4qYKFq9t9Z9UzXP7VdqKqz32LA==
+
 pixi-viewport@^4.34.4:
   version "4.34.4"
   resolved "https://registry.yarnpkg.com/pixi-viewport/-/pixi-viewport-4.34.4.tgz#78d575235225d852e5017e89da7cc939ec50a9f8"
