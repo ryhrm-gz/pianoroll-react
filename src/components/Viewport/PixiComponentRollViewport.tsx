@@ -30,9 +30,15 @@ export const PixiComponentRollViewport = PixiComponent("RollViewport", {
 
     return viewport;
   },
-  applyProps: (viewport, _oldProps, { deltaX, deltaY }) => {
+  applyProps: (viewport, _oldProps, { deltaX, deltaY, numberBar }) => {
     viewport.top = scrollY(deltaY, 20, viewport.top, viewport.bottom);
 
-    viewport.left = scrollX(deltaX, 20, viewport.left);
+    viewport.left = scrollX(
+      deltaX,
+      20,
+      viewport.left,
+      viewport.right,
+      numberBar
+    );
   },
 });
