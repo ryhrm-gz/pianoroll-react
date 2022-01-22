@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { PianoRoll } from "./PianoRoll";
+import { Editor } from "./Editor";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PianoRoll numberBar={256} width={600} height={500} />
+    <Editor numberBar={4} width={600} height={500} />
   </React.StrictMode>,
   document.getElementById("root")
 );

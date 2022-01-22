@@ -10,7 +10,7 @@ type Props = {
   height?: number;
 };
 
-export const PianoRoll = ({ numberBar, width = 800, height = 833 }: Props) => {
+export const Editor = ({ numberBar, width = 1000, height = 833 }: Props) => {
   const [deltaX, setDeltaX] = useState(0);
   const [deltaY, setDeltaY] = useState(0);
 
