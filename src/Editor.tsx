@@ -32,11 +32,15 @@ export const Editor = ({ numberBar, width = 1000, height = 858 }: Props) => {
     }
   };
 
-  const handleFileInput = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleFileInput = async (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files?.length === 0 || !event.target.files) {
       return;
     }
-    midi.parse(event.target.files[0]);
+    try {
+      await midi.parse(event.target.files[0]);
+    } catch (e) {
+      console.log(e);
+    }
     event.target.value = "";
   };
 

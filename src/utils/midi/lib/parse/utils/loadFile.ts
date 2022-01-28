@@ -12,7 +12,7 @@ export const loadFile = (file: File): Promise<Uint8Array> => {
         array[2] !== 0x68 &&
         array[3] !== 0x64
       ) {
-        reject(new Error("Not a MIDI file"));
+        reject("Not a MIDI file");
       }
 
       resolve(array);
