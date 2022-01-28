@@ -1,5 +1,5 @@
-import { parse } from "./parse";
+import { parse } from "./lib/parse";
 
 export const midi = {
-  parse: (midi: File) => parse(midi),
+  parse: (file: File) => parse(file),
 };
