@@ -37,7 +37,8 @@ export const Editor = ({ numberBar, width = 1000, height = 858 }: Props) => {
       return;
     }
     try {
-      await midi.parse(event.target.files[0]);
+      const data = await midi.parse(event.target.files[0]);
+      console.log(data);
     } catch (e) {
       console.log(e);
     }

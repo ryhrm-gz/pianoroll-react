@@ -1,12 +1,5 @@
+import { Header } from "../../../types";
 import { getInt } from "./getInt";
-
-export type Header = {
-  size: number;
-  format: number;
-  trackNumber: number;
-  timeDivision: number;
-  resolution: number;
-};
 
 export const parseHeader = (array: Uint8Array): Header => {
   const header = {
