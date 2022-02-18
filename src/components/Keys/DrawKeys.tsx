@@ -8,10 +8,10 @@ import { TextStyle } from "pixi.js";
 type Draw = ComponentProps<typeof Graphics>["draw"];
 
 export const DrawKeys = () => {
-  const whiteWidth = 80;
-  const whiteHeight = 16;
-  const blackWidth = whiteWidth * 0.6;
-  const blackHeight = whiteHeight * 0.6;
+  const WHITE_WIDTH = 80;
+  const WHITE_HEIGHT = 16;
+  const BLACK_WIDTH = WHITE_WIDTH * 0.6;
+  const BLACK_HEIGHT = WHITE_HEIGHT * 0.6;
   const keys = Range.numeric(["C8", "A0"]);
 
   //@ts-ignore
@@ -25,11 +25,11 @@ export const DrawKeys = () => {
           .lineStyle(1, 0xcccccc)
           .drawRect(
             0,
-            whiteHeight *
+            WHITE_HEIGHT *
               numLowerWhites(Array.from(Array(index), (_, k) => k)) +
               25,
-            whiteWidth,
-            whiteHeight
+            WHITE_WIDTH,
+            WHITE_HEIGHT
           );
       }
     });
@@ -41,12 +41,12 @@ export const DrawKeys = () => {
           .lineStyle(1, 0xcccccc)
           .drawRect(
             0,
-            whiteHeight *
+            WHITE_HEIGHT *
               numLowerWhites(Array.from(Array(index), (_, k) => k)) +
-              -blackHeight / 2 +
+              -BLACK_HEIGHT / 2 +
               25,
-            blackWidth,
-            blackHeight
+            BLACK_WIDTH,
+            BLACK_HEIGHT
           );
       }
     });
@@ -63,7 +63,7 @@ export const DrawKeys = () => {
               key={note.name}
               text={note.name}
               y={
-                whiteHeight *
+                WHITE_HEIGHT *
                   numLowerWhites(Array.from(Array(index), (_, k) => k)) +
                 28
               }
