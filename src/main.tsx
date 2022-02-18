@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Editor } from "./Editor";
+import { Editor } from "./components/Editor";
 
 ReactDOM.render(
   <React.StrictMode>

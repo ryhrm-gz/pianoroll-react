@@ -973,6 +973,11 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+midifile-ts@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/midifile-ts/-/midifile-ts-1.4.0.tgz#c7a78760cfd55265d5c7790abb47ae886e6f9d8a"
+  integrity sha512-CGGSyGYRSyIS8+Y0dp7BrPRFf0nm8UvekzWgkzSTvyAM+NXtMk4MJgzw7XDItM6wW1oma2kwp6sKfDKFz7DnFw==
+
 minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"

@@ -1,12 +1,12 @@
 import { Stage } from "@inlet/react-pixi";
 import { useState, WheelEvent, ChangeEvent } from "react";
-import { Keys } from "./components/Keys";
-import { Roll } from "./components/Roll";
-import { Ruler } from "./components/Ruler";
-import { Title } from "./components/Title";
-import { RollViewport, KeysViewport } from "./components/Viewport";
-import { RulerViewport } from "./components/Viewport/RulerViewport";
-import { midi } from "./utils/midi";
+import { parseMidi } from "../../utils/midi";
+import { Keys } from "../Keys";
+import { Roll } from "../Roll";
+import { Ruler } from "../Ruler";
+import { Title } from "../Title";
+import { RollViewport, KeysViewport } from "../Viewport";
+import { RulerViewport } from "../Viewport";
 
 type Props = {
   numberBar: number;
@@ -37,8 +37,7 @@ export const Editor = ({ numberBar, width = 1000, height = 858 }: Props) => {
       return;
     }
     try {
-      const data = await midi.parse(event.target.files[0]);
-      console.log(data);
+      parseMidi(event.target.files[0]);
     } catch (e) {
       console.log(e);
     }

@@ -9,6 +9,7 @@
   "dependencies": {
     "@inlet/react-pixi": "^6.6.5",
     "@tonaljs/tonal": "^4.6.5",
+    "midifile-ts": "^1.4.0",
     "pixi-cull": "^2.1.0",
     "pixi-viewport": "^4.34.4",
     "pixi.js": "^6.2.2",
